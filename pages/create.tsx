@@ -8,16 +8,26 @@ const Draft: React.FC = () => {
 
 
   const submitData = async (e: React.SyntheticEvent) => {
+    console.log("crate submit 1 okay ");
+    
     e.preventDefault();
+    console.log("crate submit 2 okay ");
+
     try {
+    console.log("crate submit 3 okay ");
+
       const body = { title, content };
       await fetch('/api/post', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(body),
       });
+    console.log("crate submit 4 okay ");
+
       await Router.push('/drafts');
     } catch (error) {
+    console.log("crate submit 2 error ");
+
       console.error(error);
     }
   };
